@@ -1,0 +1,69 @@
+28/10/2003
+https://www.quora.com/Have-Mark-Zuckerbergs-Livejournal-posts-been-archived-anywhere
+
+ 
+
+  
+8:13pm。我需要想些事情来占据我的思想。很容易现在我需要一个主意…
+
+9:48pm。我有点醉了，不想撒谎。那么，如果现在不是晚上10点，而是周二晚上呢?什么?柯克兰的facebook在我的电脑桌面上打开了，其中一些人的facebook照片非常可怕。
+我几乎想把这些面孔中的一些放在农场动物的照片旁边，让人们投票决定哪个更有吸引力。这不是一个好主意，甚至可能一点都不好笑，但比利想出了一个主意，把facebook上的两个人进行比较，有时只是把一只农场动物放进去。打得好，奥尔森先生!我想他说到点子上了。
+
+11:09pm。是的,它在。我不确定农场动物将如何适应这整件事(你永远无法真正确定农场动物……)，但我喜欢把两个人放在一起比较的想法。这让整件事给人一种图灵的感觉，因为人们对照片的评分将比在hotornot网站上选择一个数字来代表每个人的性感程度更加含蓄。我们还需要很多图片。不幸的是，哈佛并没有公共的花名冊，所以我要从人们所在的各个宿舍樓里获取所有的图片。这意味着没有新生的照片…
+
+12:58pm。让黑客开始吧。首先是柯克兰。它们所有的内容都是开放的，并且允许在Apache配置中使用索引，因此下载整个Kirkland facebook只需要一点wget功能。小孩的把戲。
+
+1:03am。名单上的下一个是艾略特。它们也是开放的，但是在Apache中没有索引。我可以运行一个空搜索，它会在一个页面中返回数据库中的所有图像。然后我可以保存页面，Mozilla会为我保存所有的图片。
+太好了。始终……
+
+1:06am。洛厄尔有一些安全防火牆。他们需要用户名/密码组合才能访问facebook。我要说的是，他们没有访问fas用户数据库的权限，所以他们无法知道人们的密码是什么
+学校并没有要求学生输入fas密码，所以肯定是别的什么东西。也许有一个洛厄尔都知道的用户名/密码组合。
+这似乎有点难管理，因为它将是不可能的网站管理员告诉洛厄尔居民如何计算出用户名和密码，而不完全泄露他们。你想让人们知道什么认证是必要的，
+所以可能也不是这样。那么，每个学生都有哪些可以用于认证的东西是宿舍樓网站管理员可以访问的呢?学生id吗?我怀疑是时候为我和洛厄尔找到一个匹配的名字和学生证组合了。但还有更多的问题。这些图片被分成了一堆不同的页面，我太懒了，不想把它们都看完，然后保存下来。编写perl脚本来处理这个问题似乎是正确的答案。确实。
+
+1:31am。Adams没有安全防火牆，但是将结果限制在每页20个。我所要做的就是拿出刚才在洛厄尔用过的脚本，然后我们就搞定了。
+
+1:42am。昆西没有在线facebook。什么是虚假的。我对此无能为力。
+
+1:43am。邓斯特很激烈。不仅没有公共目录，而且根本没有目录。您必须进行搜索，如果您的搜索返回超过20个匹配项，则什么也不会返回。一旦你得到结果，它们就不会直接链接
+图像;它们链接到重定向的php。奇怪。这可能比较困难。
+我一会儿再来。
+
+1:52am。莱弗里特好些了。他们仍然让你搜索，但你可以做一个空的搜索，得到每个学生图片的页面链接。他们一次只让你看一张照片，这有点让人讨厌，我也没办法
+要一次下载一个图片，需要转到500页，因此显然有必要打破emacs并修改perl脚本。这一次，它将查看目录并通过查找与regexes的链接来确定需要转到哪些页面。然后它就会
+它找到的所有页面的链接和杰克的图像从他们。这需要一些尝试
+编译脚本…另一个Beck的脚本也可以。
+
+2:08am。Mather与Leverett基本相同，只是它们将目录分解为类。他们的facebook上没有大一新生…
+
++++
+
+28/10/2003
+8:13pm. I need to think of something to occupy my mind. Easy enough
+now I just need an idea…
+9:48pm. I’m a little intoxicated, not gonna lie. So what if it’s not even 10pm and it’s a Tuesday night? What? The Kirkland facebook is open on my computer desktop and some of these people have pretty horrendous facebook pics.
+I almost want to put some of these faces next to pictures of farm animals and have people vote on which is more attractive. It’s not such a great idea and probably not even funny, but Billy comes up with the idea of comparing two people from the facebook, and only sometimes putting a farm animal in there. Good call Mr. Olson! I think he’s onto something.
+11:09pm. Yea, it’s on. I’m not exactly sure how the farm animals are going to fit into this whole thing (you can’t really ever be sure with farm animals…), but I like the idea of comparing two people together. It gives the whole thing a very Turing feel, since people’s ratings of the pictures will be more implicit than, say, choosing a number to represent each person’s hotness like they do on hotornot website. The other thing we’re going to need is a lot of pictures. Unfortunately, Harvard doesn’t keep a public centralized
+facebook so I’m going to have to get all the images from the individual houses that people arein.
+And that means no freshman pictures…drats.
+12:58pm. Let the hacking begin. First on the list is Kirkland. They keep everything open and allow indexes in their Apache configuration, so a little wget magic is all that’s necessary to download the entire Kirkland facebook. Child’s play.
+1:03am. Next on the list is Eliot. They’re also open, but with no indexes in Apache. I can run an empty search and it returns all of the images in the database in single page. Then I can save the page and Mozilla will save all the images for me.
+Excellent. Moving right along…
+1:06am. Lowell has some security. They require a username/password combo to access the facebook. I’m going to go ahead and say that they don’thave access to the main fas user database, so they have no way of knowing what people’s passwords are, and
+the house isn’t exactly going to ask students for their fas passwords, so it’s got to be something else. Maybe there’s a single username/password combo that all of Lowell knows.
+That seems a little hard to manage since it would be impossible for the webmaster to tell Lowell residents how to figure out the username and password without giving them away completely. And you do want people to know what kind of authentication is necessary,
+so it’s probably not that either. So what does each student have that can be used for authentication that the house webmaster has access to? Student ids anyone? Suspicions affirmed –time to get myself a matching name and student id combo for Lowell and I’m in. But there are more problems. The pictures are separated into a bunch of different pages, and I’m way too lazy to go through all of them and save each one. Writing a perl script to take care of that seems like the right answer. Indeed.
+1:31am. Adams has no security, but limits the number of results to 20 a page. All I need to do is break out the same script I just used on Lowell and we’re set.
+1:42am. Quincy has no online facebook. What a sham. Nothing I can do about that.
+1:43am. Dunster is intense. Not only is there no public directory, but there’s no directory at all. You have to do searches, and if your search returns more than 20 matches, nothing gets returned. And once you do get results, they don’t link directly
+to the images; they link to a php that redirects or something. Weird. This may bedifficult.
+I’ll come back later.
+1:52am. Leverett is a little better. They still make you search, but you can do an empty search and get links to pages with every student’s picture. It’s slightly obnoxious that they only let you view one picture at a time, and there’s no way I’m going
+to go to 500 pages to download pics one at a time, so it’s definitely necessary to break out emacs and modify that perl script. This time it’s going to look at the directory and figure out what pages it needs to go to by finding links with regexes. Then it’ll just go to
+all of the pages it found links to and jack the images from them. It’s taking a few tries to
+compile the script…another Beck’s is in order.
+2:08am. Mather is basically the same as Leverett, except they break their directory down into classes. There aren’t any freshmen in their facebook…how weak.
+PS: In any case I do not take the responsibility for the authenticity of the information provided above.
+I hope this helps. :-)
+Thanks for reading. Please do Like, comment and share it with your friends.
+
